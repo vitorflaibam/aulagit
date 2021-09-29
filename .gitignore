@@ -1,0 +1,10 @@
+# tudo com # no começo é comentário
+# todos os arquivos aqui sao ignorados
+
+# arquivo.lib
+
+# posso ignorar um conjunto de arquivos
+# *.lib
+
+# posso ignorar uma pasta inteira
+biblioteca/
