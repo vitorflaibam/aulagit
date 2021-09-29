@@ -14,7 +14,7 @@ public class Exercicio04 {
         prestacao = entrada.nextDouble();
 
         if(prestacao >= salario * 0.3) {
-            System.out.println("O empréstimo não pode ser feito");
+            System.out.println("O empréstimo não pode ser feito.");
         } else {
             System.out.println("O empréstimo poderá ser concedido.");
         }
