@@ -1,4 +1,4 @@
-package exercicios.exercicio01;
+package exercicios.exercicio01.dominio;
 
 public class Conta {
     private int numeroConta;

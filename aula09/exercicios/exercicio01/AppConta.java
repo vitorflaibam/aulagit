@@ -2,6 +2,11 @@ package exercicios.exercicio01;
 
 import java.util.Scanner;
 
+import exercicios.exercicio01.dao.GerenciaContas;
+import exercicios.exercicio01.dominio.ContaCorrente;
+import exercicios.exercicio01.dominio.ContaEspecial;
+import exercicios.exercicio01.dominio.ContaPoupanca;
+
 public class AppConta {
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
@@ -11,6 +16,8 @@ public class AppConta {
         ContaCorrente cc = null;
         ContaEspecial ce = null;
         ContaPoupanca cp = null;
+
+        GerenciaContas contas = new GerenciaContas();
 
         do {
             System.out.println("1- Nova Conta Corrente");
@@ -26,7 +33,7 @@ public class AppConta {
                 case 1:
                     System.out.println("Digite o número da conta:");
                     numConta = entrada.nextInt();
-                    cc = new ContaCorrente(numConta);
+                    contas.novaContaCorrente(numConta);
                     break;
 
                 case 2:
@@ -44,9 +51,11 @@ public class AppConta {
                     break;
 
                 case 4:
+                System.out.println("Digite o número da conta:");
+                    numConta = entrada.nextInt();
                     System.out.println("Informe o valor a ser depositado:");
                     valor = entrada.nextDouble();
-                    if (cc.depositar(valor)){
+                    if (contas.depositar(numConta, valor)){
                         System.out.println("Depósito realizado");
                     } else { 
                         System.out.println("Falha ao realizar o depósito");
@@ -54,9 +63,11 @@ public class AppConta {
                     break;
 
                 case 5:
+                System.out.println("Digite o número da conta:");
+                    numConta = entrada.nextInt();
                 System.out.println("Informe o valor a ser sacado:");
                 valor = entrada.nextDouble();
-                if (cc.sacar(valor)){
+                if (contas.sacar(numConta, valor)){
                     System.out.println("Saque realizado");
                 } else { 
                     System.out.println("Falha ao realizar o saque");
@@ -64,8 +75,9 @@ public class AppConta {
                     break;
 
                 case 6:
-                    System.out.println(cc);
-                    System.out.println(ce);
+                System.out.println("Digite o número da conta:");
+                numConta = entrada.nextInt();
+                System.out.println(contas.saldo(numConta));
                     break;
 
                 case 7:

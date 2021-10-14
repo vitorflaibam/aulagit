@@ -1,4 +1,4 @@
-package exercicios.exercicio01;
+package exercicios.exercicio01.dominio;
 
 public class ContaCorrente extends Conta{
     final double TAXA_DEPOSITO = 0.1;
